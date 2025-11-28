@@ -17,6 +17,8 @@ class MemoryStore:
         self.admins: Dict[str, Administrador] = {}
         self.servico = AgendamentoService()
         self.sessions: Dict[str, str] = {}
+        # garante que o arquivo recém-criado (ou recriado) tenha esquema necessário
+        db._ensure()
         self._seed()
 
     # --- usuários ---

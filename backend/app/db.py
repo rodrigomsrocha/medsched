@@ -3,7 +3,7 @@ import os
 import sqlite3
 from typing import Iterable, List, Optional
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "data.db")
+DB_PATH = os.getenv("MEDSCHED_DB_PATH", os.path.join(os.path.dirname(__file__), "data.db"))
 
 
 class Database:
